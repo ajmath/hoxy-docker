@@ -1,0 +1,13 @@
+{
+  "name": "hoxy-docker",
+  "version": "0.1",
+  "description": "Lightweight wrapper around hoxy",
+  "main": "index.js",
+  "repository": "github.com/ajmath/hoxy-docker",
+  "author": "Andrew Matheny",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "hoxy": "^3.2.2"
+  }
+}
