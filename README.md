@@ -37,4 +37,4 @@ And then to run the above config, you can use the following shell command
 docker run -p 8080:8080 -v $(pwd)/conf.js:/conf.js -it ajmath/hoxy
 ```
 
-See the (hoxy docs)[http://greim.github.io/hoxy/] for the full feature set
+See the [hoxy docs](http://greim.github.io/hoxy/) for the full feature set
