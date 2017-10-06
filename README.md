@@ -1,6 +1,6 @@
 # hoxy-docker
 
-A lightweight container wrapper around (greim/hoxy)[https://github.com/greim/hoxy]
+A lightweight container for [greim/hoxy](https://github.com/greim/hoxy)
 
 ## Usage
 
@@ -11,7 +11,7 @@ Start up the proxy
 Try it out (in a separate shell)
 `curl --proxy localhost:8080 example.com`
 
-This loads up the (default config)[./default-conf.js] which logs basic
+This loads up the [default config](./default-conf.js) which logs basic
 information about requests and responses
 
 #### Customizing the Proxy
