@@ -1,7 +1,17 @@
 const hoxy = require('hoxy');
 const fs = require('fs');
 
-const proxy = hoxy.createServer().listen(8080);
+let certAuthority;
+if (process.env.CA_KEY) {
+  certAuthority = {
+    key: fs.readFileSync(process.env.CA_KEY),
+    cert: fs.readFileSync(process.env.CA_CERT),
+  };
+}
+
+const proxy = hoxy.createServer({
+  certAuthority,
+}).listen(8080);
 proxy.log('error warn', process.stderr);
 proxy.log('info', process.stdout);
 

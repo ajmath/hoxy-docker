@@ -38,3 +38,15 @@ docker run -p 8080:8080 -v $(pwd)/conf.js:/conf.js -it ajmath/hoxy
 ```
 
 See the [hoxy docs](http://greim.github.io/hoxy/) for the full feature set
+
+#### Faking HTTPS
+
+You'll need to generate keys like this
+```
+# Create the key
+openssl genrsa -out root-ca.key.pem 2048
+# Create the cert
+openssl req -x509 -new -nodes -key root-ca.key.pem -days 1024 -out root-ca.crt.pem -subj "/C=US/ST=Utah/L=Provo/O=ACME Signing Authority Inc/CN=example.com"
+```
+Then mount these keys into the container and set `CA_KEY` and `CA_CERT` environment
+variable that point to where they can be found in the container.
